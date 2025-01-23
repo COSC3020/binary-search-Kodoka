@@ -10,7 +10,7 @@ function binarySearch(list, element) {
             return -1;
         }
         // If the element we're looking for is found...
-        else if(list[index] == element && list[index] < element)
+        else if(list[index] == element)
         {
             // Return what position in the list the element is at.
             return index;
