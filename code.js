@@ -37,6 +37,7 @@ function binarySearch(list, element) {
             rightIndex = checkIndex - 1;
         }
     }
-    // If rightIndex exceeds leftIndex we've
+    // If rightIndex exceeds leftIndex without finding searched element,
+    // element doesn't exist in list, and resultIndex will return -1.
     return resultIndex;
 }
