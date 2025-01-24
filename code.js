@@ -18,6 +18,6 @@ function binarySearch(list, element) {
     else
     {
         // recursively search slice of list composed of subsequent index values.
-        return binarysearch(list.slice(middle + 1, list.length));
+        return binarySearch(list.slice(middle + 1, list.length), element);
     }
 }
