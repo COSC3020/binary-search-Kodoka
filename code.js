@@ -1,21 +1,23 @@
 function binarySearch(list, element) {
-    // Itterate through the list...
-    for (let index = 0; index < list.length; index++)
+    // Find the middle index of the list.
+    var middle = list.length // 2
+    // If the value at the middle index equals the searched value...
+    if(list[middle] == element)
     {
-        // As the list is sorted, when list[index] exceeds element,
-        // element can be presumed to not be in the list.
-        if(list[index] > element)
-        {
-            // Thus return -1.
-            return -1;
-        }
-        // If the element we're looking for is found...
-        else if(list[index] == element)
-        {
-            // Return what position in the list the element is at.
-            return index;
-        }
+        // return that index.
+        return middle;
     }
-    // If element isn't found, return -1.
-    return -1;
+    // If the value at the middle index is greater than the searched value...
+    else if(list[middle] > element)
+    {
+        // return -1, as we're working with a sorted list, thus the searched
+        // value doesn't exist in the list.
+        return -1;
+    }
+    // If the value at the middle index is less than searched value...
+    else
+    {
+        // recursively search slice of list composed of subsequent index values.
+        return binarysearch(list.slice(middle + 1, list.length));
+    }
 }
